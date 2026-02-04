@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useState } from "react";
 import ColorScale from "~/components/ColorScale";
 import FeatureMap from "~/components/FeatureMap";
@@ -142,7 +141,7 @@ export default function HomePage() {
           ),
         );
 
-        const response = await fetch("inference_url_here(you'll find it @ modal's app section and copy paste the Url from there)", {
+        const response = await fetch("https://sushitrashhhh--audio-cnn-inference-audioclassifier-inference.modal.run/", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ audio_data: base64String }),
@@ -187,6 +186,7 @@ export default function HomePage() {
             <div className="relative inline-block">
               <input
                 type="file"
+                placeholder="file"
                 accept=".wav"
                 id="file-upload"
                 onChange={handleFileChange}
